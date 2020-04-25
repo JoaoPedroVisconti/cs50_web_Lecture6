@@ -1,0 +1,6 @@
+*.yaml
+*.vscode
+config.py
+*.pyc
+*.md
+# /__pycache__/
