@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <script id="result" type="text/template">
+        <li>
+            You rolled:
+            <!-- Function of the handlebar that loop between values of a variable
+            #each <nameOfTheVariable> -->
+            {{#each values}}
+            <img alt="{{this}}" title="{{this}}" src="img/{{this}}.png"></img>
+            {{/each}}
+            (Total: {{total}})
+        </li>
+    </script>
+
+    <script src="dice3.js"></script>
+
+    <link rel="stylesheet" href="dice3.css">
+
+    <title>Dice 3</title>
+</head>
+
+<body>
+    <input type="number" id="counter" placeholder="Number of Rolls" min="1" value="1">
+    <button id="roll">Roll</button>
+    <ul id="rolls"></ul>
+</body>
+
+</html>

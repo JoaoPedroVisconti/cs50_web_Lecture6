@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <script id="post" type="text/x-handlebars-template">
+        <div class="post">
+            {%raw -%}
+                {{content}}
+            {%- endraw%}
+            <button id="hide">HIDE</button>
+        </div>
+    </script>
+
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+    <title>Posts 2</title>
+    <style>
+        /* ? Don't know wy it is not working with the external source */
+        
+        .hide {
+            float: right;
+        }
+
+        .post {
+            background-color: purple;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        body {
+            padding-bottom: 50px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div id="posts"></div>
+</body>
+
+</html>
