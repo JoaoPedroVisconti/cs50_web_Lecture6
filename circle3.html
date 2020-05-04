@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <title>Circle 2</title>
+</head>
+
+<body>
+    <svg id="svg" style="width:100%; height:800px"></svg>
+</body>
+<script>
+    const svg = d3.select('#svg');
+
+    const c1 = svg.append('circle')
+        .attr('cx', 200)
+        .attr('cy', 200)
+        .attr('r', 50)
+        .style('fill', 'blue');
+
+    const c2 = svg.append('circle')
+        .attr('cx', 200)
+        .attr('cy', 300)
+        .attr('r', 50)
+        .style('fill', 'green');
+
+    c1.transition()
+    .duration(1000)
+    .delay(1000)
+    .attr('cx', 500);
+
+    c1.on('click', function() {
+        d3.select(this).transition()
+        .duration(2000)
+        .style('fill', 'red');
+    });
+</script>
+
+</html>
